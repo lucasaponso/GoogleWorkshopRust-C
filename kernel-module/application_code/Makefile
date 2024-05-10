@@ -7,10 +7,10 @@ CC = gcc
 CFLAGS = -Wall -Wextra
 
 # Source file
-SRC = main.c
+SRC = app.c
 
 # Output binary
-OUTPUT = bin/main
+OUTPUT = bin/app
 
 all: $(OUTPUT)
 
