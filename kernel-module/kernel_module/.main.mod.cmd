@@ -1,1 +1,0 @@
-savedcmd_/root/rust_tutorial/google_projects/google-workshop/kernel-module/kernel_module/main.mod := printf '%s\n'   main.o | awk '!x[$$0]++ { print("/root/rust_tutorial/google_projects/google-workshop/kernel-module/kernel_module/"$$0) }' > /root/rust_tutorial/google_projects/google-workshop/kernel-module/kernel_module/main.mod

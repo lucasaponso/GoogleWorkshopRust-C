@@ -3,7 +3,7 @@
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 
-#define DEVICE_NAME "/dev/googlechar"
+#define DEVICE_NAME "/dev/chardev"
 
 static int major_number;
 static char message[256] = "Hello from the kernel!\n";
@@ -28,8 +28,22 @@ static ssize_t device_read(struct file *filp, char *buffer, size_t length, loff_
     return bytes_read;
 }
 
+static ssize_t device_write(struct file *filp, const char *buffer, size_t length, loff_t *offset) {
+    // Clear the message buffer
+    memset(message, 0, sizeof(message));
+
+    // Copy data from user buffer to kernel message buffer
+    if (copy_from_user(message, buffer, length) != 0) {
+        return -EFAULT; // Return an error if copy fails
+    }
+
+    size_of_message = length;
+    return length;
+}
+
 static struct file_operations fops = {
     .read = device_read,
+    .write = device_write, // Add write function
     .open = device_open,
     .release = device_release,
 };

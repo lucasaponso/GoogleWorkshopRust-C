@@ -55,3 +55,40 @@ Defines a structure (`fops`) that contains pointers to the file operation functi
 
 - `printk`: Prints messages to the kernel log with different log levels (`KERN_ALERT`, `KERN_INFO`).
 
+## Compiling and Loading the Kernel Module
+
+To compile and load the kernel module, follow these steps:
+
+1. **Compile the Module**: Execute the makefile to compile the module:
+
+    ```bash
+    make
+    ```
+
+2. **Load the Module**: After compiling, you can load the module into the kernel using `insmod`. Make sure to have appropriate permissions (usually root) to load the module:
+
+    ```bash
+    sudo insmod chardev.ko
+    ```
+
+3. **Check Kernel Logs**: After loading the module, you can check the kernel logs to verify if the module was loaded successfully (may need sudo priv):
+
+    ```bash
+    sudo dmesg | tail
+    ```
+
+## Removing the Kernel Module
+
+To remove the kernel module, follow these steps:
+
+1. **Unload the Module**: Use the `rmmod` command followed by the name of the module to unload it from the kernel:
+
+    ```bash
+    sudo rmmod chardev
+    ```
+
+2. **Check Kernel Logs**: After unloading the module, you can check the kernel logs to verify if the module was unloaded successfully:
+
+    ```bash
+    sudo dmesg | tail
+    ```
