@@ -6,3 +6,7 @@ kernel-module/kernel_module/*.o
 kernel-module/kernel_module/Module.symvers
 kernel-module/kernel_module/modules.order
 .vscode
+kernel-module/kernel_module/.Module.symvers.cmd
+kernel-module/kernel_module/.modules.order.cmd
+kernel-module/kernel_module/Module.symvers
+kernel-module/kernel_module/modules.order
