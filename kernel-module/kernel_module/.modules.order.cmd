@@ -1,1 +1,0 @@
-savedcmd_/root/rust_tutorial/google_projects/google-workshop/kernel-module/kernel_module/modules.order := {   echo /root/rust_tutorial/google_projects/google-workshop/kernel-module/kernel_module/chardev.o; :; } > /root/rust_tutorial/google_projects/google-workshop/kernel-module/kernel_module/modules.order
